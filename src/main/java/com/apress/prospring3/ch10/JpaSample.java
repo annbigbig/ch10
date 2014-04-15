@@ -28,7 +28,11 @@ public class JpaSample {
 		ctx.refresh();
 		
 		ContactService contactService = ctx.getBean("jpaContactService", ContactService.class);
+		//find all
+		List<Contact> contacts = contactService.findAll();
+		listContacts(contacts);
 		
+		/*
 		// Add new contact
 		Contact contact = new Contact();
 		contact.setFirstName("Michael");
@@ -76,7 +80,7 @@ public class JpaSample {
 		// Find contact by criteria query
 		contacts = contactService.findByCriteriaQuery("John", "Smith");
 		listContactsWithDetail(contacts);			
-		
+		*/
 	}
 
 	private static void listContacts(List<Contact> contacts) {

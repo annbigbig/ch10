@@ -21,7 +21,7 @@ import javax.persistence.Version;
  *
  */
 @Entity
-@Table(name = "contact_tel_detail")
+@Table(name = "CONTACT_TEL_DETAIL")
 public class ContactTelDetail implements Serializable {
 
 	private Long id;

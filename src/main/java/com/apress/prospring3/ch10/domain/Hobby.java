@@ -20,7 +20,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "hobby")
+@Table(name = "HOBBY")
 public class Hobby implements Serializable {
 
 	private String hobbyId;
@@ -49,7 +49,7 @@ public class Hobby implements Serializable {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "contact_hobby_detail", 
+	@JoinTable(name = "CONTACT_HOBBY_DETAIL", 
 	      joinColumns = @JoinColumn(name = "HOBBY_ID"), 
 	      inverseJoinColumns = @JoinColumn(name = "CONTACT_ID"))
 	public Set<Contact> getContacts() {

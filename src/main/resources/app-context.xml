@@ -9,10 +9,30 @@
 
 	<description>Example configuration to get you started.</description>
 
+	<!-- 
 	<jdbc:embedded-database id="dataSource" type="H2">
         <jdbc:script location="classpath:schema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>    
     </jdbc:embedded-database>
+    -->
+    
+     <context:property-placeholder location="jdbc.properties" />
+     
+     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close">
+        <property name="driverClassName">
+            <value>${jdbc.driverClassName}</value>
+        </property>
+        <property name="url">
+            <value>${jdbc.url}</value>
+        </property>
+        <property name="username">
+            <value>${jdbc.username}</value>
+        </property>
+        <property name="password">
+            <value>${jdbc.password}</value>
+        </property>
+    </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="emf"/>
@@ -39,6 +59,8 @@
 
     <context:annotation-config/>
 
+	<!-- 試試看 Spring 到底會不會連這個包下面的子包一起搜尋需要 Dependency Injection 的 annotations -->
+	<!-- <context:component-scan base-package="com.apress.prospring3.ch10" /> -->
 	<context:component-scan base-package="com.apress.prospring3.ch10.service.jpa" />
 
 </beans>

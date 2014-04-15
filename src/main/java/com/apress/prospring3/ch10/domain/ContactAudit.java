@@ -41,7 +41,7 @@ import org.springframework.data.domain.Auditable;
  */
 @Entity
 @Audited
-@Table(name = "contact_audit")
+@Table(name = "CONTACT_AUDIT")
 @NamedQueries({
 	@NamedQuery(name="ContactAudit.findAll",
 			    query="select c from Contact c"), 
