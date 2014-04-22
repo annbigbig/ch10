@@ -10,7 +10,8 @@ import java.io.Serializable;
  *
  */
 public class ContactSummary implements Serializable {
-
+	// firstName和lastName是在CONTACT資料表， 而homeTelNumber是在CONTACT_TEL_DETAIL資料表
+	
 	private String firstName;
 	
 	private String lastName;

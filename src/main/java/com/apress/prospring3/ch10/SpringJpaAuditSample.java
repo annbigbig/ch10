@@ -51,6 +51,7 @@ public class SpringJpaAuditSample {
 		contacts = contactService.findAll();
 		listContacts(contacts);
 		
+		
 		// Find audit record by revision
 		ContactAudit oldContact = contactService.findAuditByRevision(1l, 1);
 		System.out.println("");
@@ -59,7 +60,8 @@ public class SpringJpaAuditSample {
 		oldContact = contactService.findAuditByRevision(1l, 2);
 		System.out.println("");
 		System.out.println("Old Contact with id 1 and rev 2:" + oldContact);	
-		System.out.println("");			
+		System.out.println("");
+					
 		
 	}
 

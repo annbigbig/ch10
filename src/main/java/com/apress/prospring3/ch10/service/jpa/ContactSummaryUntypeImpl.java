@@ -27,7 +27,9 @@ public class ContactSummaryUntypeImpl {
 	
 	@Transactional(readOnly=true)
 	public void displayAllContactSummary() {
-
+		//native SQL statement 原生的SQL句長得像這樣
+		//SELECT c.FIRST_NAME,c.LAST_NAME,t.TEL_NUMBER FROM CONTACT c LEFT OUTER JOIN CONTACT_TEL_DETAIL t ON c.ID = t.CONTACT_ID WHERE t.TEL_TYPE='Home';
+		
 		List result = em
 				.createQuery("select c.firstName, c.lastName, t.telNumber "
 						+ "from Contact c left join c.contactTelDetails t " 

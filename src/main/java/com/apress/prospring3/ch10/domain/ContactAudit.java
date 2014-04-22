@@ -138,7 +138,7 @@ public class ContactAudit implements Auditable<String, Long>, Serializable {
 
 	@ManyToMany
 	@NotAudited
-	@JoinTable(name = "contact_hobby_detail", 
+	@JoinTable(name = "CONTACT_HOBBY_DETAIL", 
 	      joinColumns = @JoinColumn(name = "CONTACT_ID"), 
 	      inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
 	public Set<Hobby> getHobbies() {

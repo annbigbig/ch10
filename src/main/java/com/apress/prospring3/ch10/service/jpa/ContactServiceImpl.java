@@ -76,7 +76,8 @@ public class ContactServiceImpl implements ContactService {
 	}
 	
 	final static String ALL_CONTACT_NATIVE_QUERY =
-			"select id, first_name, last_name, birth_date, version from contact";
+			//"select id, first_name, last_name, birth_date, version from contact";
+			"SELECT ID, FIRST_NAME, LAST_NAME, BIRTH_DATE, VERSION FROM CONTACT";
 
 	@Transactional(readOnly=true)
 	public List<Contact> findAllByNativeQuery() {

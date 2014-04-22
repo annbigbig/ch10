@@ -3,6 +3,7 @@
  */
 package com.apress.prospring3.ch10;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -29,8 +30,24 @@ public class JpaSample {
 		
 		ContactService contactService = ctx.getBean("jpaContactService", ContactService.class);
 		//find all
+		/*
 		List<Contact> contacts = contactService.findAll();
 		listContacts(contacts);
+		*/
+		
+		//find all with detail
+		/*
+		List<Contact> contacts = contactService.findAllWithDetail();
+		listContactsWithDetail(contacts);
+		*/
+		
+		//find by id
+		/*
+		List<Contact> contacts = new ArrayList<Contact>();
+		Contact contact = contactService.findById(1l);
+		contacts.add(contact);
+		listContactsWithDetail(contacts);
+		*/
 		
 		/*
 		// Add new contact
@@ -44,10 +61,12 @@ public class JpaSample {
 		contact.addContactTelDetail(contactTelDetail);
 		contactService.save(contact);
 		List<Contact> contacts = contactService.findAllWithDetail();
-		listContactsWithDetail(contacts);		
+		listContactsWithDetail(contacts);
+		*/		
 	
+		/*
 		// Find contact by ID
-		contact = contactService.findById(1l);
+		Contact contact = contactService.findById(1l);
 		System.out.println("");
 		System.out.println("Contact with id 1:" + contact);
 		System.out.println("");		
@@ -63,24 +82,31 @@ public class JpaSample {
 		}
 		contactTels.remove(toDeleteContactTel);
 		contactService.save(contact);
-		contacts = contactService.findAllWithDetail();
+		List<Contact> contacts = contactService.findAllWithDetail();
 		listContactsWithDetail(contacts);
+		*/
+		
 		
 		// Delete contact
-		contact = contactService.findById(1l);
+		/*
+		Contact contact = contactService.findById(1l);
 		contactService.delete(contact);
-		contacts = contactService.findAllWithDetail();
+		List<Contact> contacts = contactService.findAllWithDetail();
 		listContactsWithDetail(contacts);	
+		*/
 		
 		// Find contact by native query
-		contacts = contactService.findAllByNativeQuery();
+		/*
+		List<Contact> contacts = contactService.findAllByNativeQuery();
 		System.out.println("Find all contacts by native query:");
-		listContacts(contacts);		
+		listContacts(contacts);
+		*/		
 		
+	
 		// Find contact by criteria query
-		contacts = contactService.findByCriteriaQuery("John", "Smith");
+		List<Contact> contacts = contactService.findByCriteriaQuery("John", "Smith");
 		listContactsWithDetail(contacts);			
-		*/
+
 	}
 
 	private static void listContacts(List<Contact> contacts) {
